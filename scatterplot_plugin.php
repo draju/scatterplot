@@ -15,7 +15,7 @@ echo "<link rel='stylesheet' href='".$module->getUrl("css/scatterplot.css")."'>"
 echo "<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>";        
 //echo "<PRE>".print_r($module->settings)."</PRE>";
 for($i=0; $i < count($module->settings); $i++){
-    echo "<h3>Scatter Plot #".($i+1).": ".$module->settings[$i]["plot-title"]."</h3><div id='myDiv$i' class='scatterplot-em'></div>";    
+    echo "<h3 class='scatterplot-em'>Scatter Plot #".($i+1).": ".$module->settings[$i]["plot-title"]."</h3><div id='myDiv$i' class='scatterplot-em'></div>";    
 ?>      
 <script>
       var trace1 = {
@@ -42,12 +42,13 @@ for($i=0; $i < count($module->settings); $i++){
       
       var layout = {
         xaxis: {
+          title: <?php echo "'".$module->settings[$i]["x-title"]."'" ?>,  
           range: [ 0.75, 5.25 ]
         },
         yaxis: {
+          title: <?php echo "'".$module->settings[$i]["y-title"]."'" ?>,    
           range: [0, 8]
-        },
-        title:'Data Labels Hover'
+        }
       };
       
       Plotly.newPlot('myDiv'+<?php echo $i ?>, data, layout);

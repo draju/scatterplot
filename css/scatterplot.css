@@ -4,3 +4,9 @@ div.scatterplot-em {
     width: 800px;
     height: 480px;
 }
+
+h3.scatterplot-em {
+    color: #000066;
+    font-family: 'Open Sans', arial, sans-serif;
+    font-weight: 600;
+}

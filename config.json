@@ -1,0 +1,88 @@
+{
+    "name": "Scatterplot",
+
+    "namespace": "Einstein\\Scatterplot",
+
+    "framework-version": 3, 
+
+    "description": "This module allows you to create scatterplots using the Plotly JS library.  Users can visually inspect the plots for potential outliers and click on them to jump to the form where the data was entered.",
+
+    "authors": [
+        {
+             "name": "Vishnu Raju",
+             "email": "datla.raju@einstein.yu.edu",
+             "institution": "Albert Einstein College of Medicine"
+        },
+        {
+            "name": "Alexandre Peshansky",
+            "email": "Alex.Peshansky@einstein.yu.edu",
+            "institution": "Albert Einstein College of Medicine"
+       }
+     ],
+
+     "links": {
+        "project": [
+           {
+              "name": "View Scatterplots",
+              "icon": "fas fa-chart-line",
+              "url": "scatterplot_plugin.php",
+              "show-header-and-footer":"true"
+           }
+        ]
+     },
+
+     "compatibility": {
+        "php-version-min": "",
+        "php-version-max": "",
+        "redcap-version-min": "9.1.1",
+        "redcap-version-max": ""
+     },
+
+     "project-settings": [
+       {  
+        "name": "Scatterplot Settings",
+        "key": "scatterplot",
+        "type": "sub_settings",
+        "repeatable": true,
+        "sub_settings": [         
+        {
+            "key": "scatterplot-desc",
+            "name": "<b>Scatterplot Settings<b>",
+            "type": "descriptive"
+        },
+        {
+            "key": "plot-title",
+            "name": "Plot Title",
+            "required": true,
+            "type": "text"
+        },
+        {
+            "key": "x-title",
+            "name": "X-Axis Title",
+            "required": true,
+            "type": "text"
+        },               
+        {
+            "key": "x-coord",
+            "name": "X Coordinate",
+            "required": true,
+            "type": "field-list",
+            "repeatable": false
+        },
+        {
+            "key": "y-title",
+            "name": "Y-Axis Title",
+            "required": true,
+            "type": "text"
+        },         
+        {
+            "key": "y-coord",
+            "name": "Y Coordinate",
+            "required": true,
+            "type": "field-list",
+            "repeatable": false
+        }                                 
+      ]
+    }
+  ]
+ }

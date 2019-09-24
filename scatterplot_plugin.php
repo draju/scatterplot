@@ -22,32 +22,24 @@ for($i=0; $i < count($module->settings); $i++){
         x: [1, 2, 3, 4, 5],
         y: [1, 6, 3, 6, 1],
         mode: 'markers',
-        type: 'scatter',
-        name: 'Team A',
-        text: ['A-1', 'A-2', 'A-3', 'A-4', 'A-5'],
-        marker: { size: 12 }
+        type: 'scatter'
       };
       
       var trace2 = {
         x: [1.5, 2.5, 3.5, 4.5, 5.5],
         y: [4, 1, 7, 1, 4],
         mode: 'markers',
-        type: 'scatter',
-        name: 'Team B',
-        text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'],
-        marker: { size: 12 }
+        type: 'scatter'
       };
       
       var data = [ trace1, trace2 ];
       
       var layout = {
         xaxis: {
-          title: <?php echo "'".$module->settings[$i]["x-title"]."'" ?>,  
-          range: [ 0.75, 5.25 ]
+          title: <?php echo "'".$module->settings[$i]["x-title"]."'" ?>
         },
         yaxis: {
-          title: <?php echo "'".$module->settings[$i]["y-title"]."'" ?>,    
-          range: [0, 8]
+          title: <?php echo "'".$module->settings[$i]["y-title"]."'" ?>    
         }
       };
       

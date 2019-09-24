@@ -13,10 +13,47 @@ require_once APP_PATH_DOCROOT . 'ProjectGeneral/header.php';
 
 echo "<link rel='stylesheet' href='".$module->getUrl("css/scatterplot.css")."'>";
 echo "<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>";        
-
-echo "<h1>Scatterplots</h1>
-      <div id='myDiv' class='scatterplot-em'>
-      </div>";
+//echo "<PRE>".print_r($module->settings)."</PRE>";
+for($i=0; $i < count($module->settings); $i++){
+    echo "<h3>Scatter Plot #".($i+1).": ".$module->settings[$i]["plot-title"]."</h3><div id='myDiv$i' class='scatterplot-em'></div>";    
+?>      
+<script>
+      var trace1 = {
+        x: [1, 2, 3, 4, 5],
+        y: [1, 6, 3, 6, 1],
+        mode: 'markers',
+        type: 'scatter',
+        name: 'Team A',
+        text: ['A-1', 'A-2', 'A-3', 'A-4', 'A-5'],
+        marker: { size: 12 }
+      };
+      
+      var trace2 = {
+        x: [1.5, 2.5, 3.5, 4.5, 5.5],
+        y: [4, 1, 7, 1, 4],
+        mode: 'markers',
+        type: 'scatter',
+        name: 'Team B',
+        text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'],
+        marker: { size: 12 }
+      };
+      
+      var data = [ trace1, trace2 ];
+      
+      var layout = {
+        xaxis: {
+          range: [ 0.75, 5.25 ]
+        },
+        yaxis: {
+          range: [0, 8]
+        },
+        title:'Data Labels Hover'
+      };
+      
+      Plotly.newPlot('myDiv'+<?php echo $i ?>, data, layout);
+</script>
+<?php
+} //end for loop over all configured plots
 
 // OPTIONAL: Display the project footer
 require_once APP_PATH_DOCROOT . 'ProjectGeneral/footer.php';

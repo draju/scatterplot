@@ -5,6 +5,7 @@
  * External Module for creating scatterplots using plotly.js
  * 
  * @author Vishnu Raju, Albert Einstein College of Medicine
+ * @author Alexandre Peshansky, Albert Einstein College of Medicine
  */
 namespace Einstein\Scatterplot;
 
@@ -15,8 +16,9 @@ use REDCap;
 
 class Scatterplot extends \ExternalModules\AbstractExternalModule {
 
-    //Project settings 
-    private $settings;
+    //Project settings
+    //TODO: change to private after moving code to class 
+    public $settings;
 
     function __construct()
     {

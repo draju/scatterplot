@@ -74,7 +74,8 @@ for($i=0; $i < count($module->settings); $i++){
         },
         yaxis: {
           title: <?php echo "'".$module->settings[$i]["y-title"]."'" ?>    
-        }
+        },
+        hovermode: 'closest'
       };
       
       Plotly.newPlot('myDiv'+<?php echo $i ?>, data, layout);
